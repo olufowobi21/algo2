@@ -1,0 +1,22 @@
+// Steps:
+
+// Initialize: Set i to 1
+// Loop: Repeat steps 3-6 until i reaches n
+// Select: Select the element arr[i] as the key to be inserted
+// Find position: Find the correct position j for the key in the sorted subarray arr[0..i-1]
+// Initialize j to i-1
+// While j is greater than or equal to 0 and arr[j] is greater than the key, decrement j and shift arr[j+1] to arr[j]
+// Insert: Insert the key into the correct position j+1 in the sorted subarray arr[0..i-1]
+// Set arr[j+1] to the key
+// Increment: Increment i by 1
+// Return: Return the sorted array arr
+
+for i = 1 to n-1
+  key = arr[i]
+  j = i-1
+  while j >= 0 and arr[j] > key
+    arr[j+1] = arr[j]
+    j = j-1
+  arr[j+1] = key
+return arr
+
